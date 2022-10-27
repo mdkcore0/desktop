@@ -631,7 +631,7 @@ bool ConfigFile::autoUpdateCheck(const QString &connection) const
     if (connection.isEmpty())
         con = defaultConnection();
 
-    QVariant fallback = getValue(QLatin1String(autoUpdateCheckC), con, true);
+    QVariant fallback = getValue(QLatin1String(autoUpdateCheckC), con, false);
     fallback = getValue(QLatin1String(autoUpdateCheckC), QString(), fallback);
 
     QVariant value = getPolicySetting(QLatin1String(autoUpdateCheckC), fallback);
